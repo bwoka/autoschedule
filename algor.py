@@ -8,17 +8,11 @@ class time_period:
 		self.end_time = self.convert_string(end_time)
 		self.day = d
 
-
-
 	def convert_string (self, str_time):
 		str_half = int((str_time[5: -1]) == "PM")
 		str_hour = int(str_time[0 :2]) %  12
 		str_minute = int(str_time[3: 5])
 		return (str_hour * 60 + str_minute) + (str_half * (12 * 60))
-
-
-
-
 
 
 class single_class:
@@ -33,3 +27,10 @@ class single_class:
 class schedule:
 	total_units = 0
 	classes = []
+
+
+
+
+#outputs : top 10 best schedules ranked
+# iput priority dictionary of classes, RAW from Api
+def best_schedules () 
