@@ -37,7 +37,7 @@ class schedule:
 
 #takes an list of single_class objects and returns a
 #dictionary with single_class keys mapping to the corresponding time_period list
-#inputted invalid classes return empty lists
+#inputed invalid classes return empty lists
 def get_schedule(classes):
 	result={}
 	for class in classes:
@@ -47,7 +47,7 @@ def get_schedule(classes):
 	return result
 
 
-#recurssive helper function for best_schedules
+#recursive helper function for best_schedules
 #inputs: list of desired classes, a schedule built so far.
 def find_schedulees(allClasses, schedule):
 	if(len(allClasses) == 0): 
@@ -62,7 +62,7 @@ def find_schedulees(allClasses, schedule):
 
 
 #outputs : list of top 10 best schedules ranked
-# iput priority dictionary of classes, RAW from Api
+# input priority dictionary of classes, RAW from Api
 def best_schedules (classesRAW):
 	allClasses = []
 	allClasses = parse_RAW(classesRAW) #Parse into list of lists of single_classes corresponding to a specific course
