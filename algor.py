@@ -47,9 +47,30 @@ def get_schedule(classes):
 	return result
 
 
+#recurssive helper function for best_schedules
+#inputs: list of desired classes, a schedule built so far.
+def find_schedulees(allClasses, schedule):
+	if(len(allClasses) == 0): 
+		if schedule.total_units >= 36: return [schedule]
+		else: return []
+	coursesToAdd = allClasses[0]
+	new_schedules = []
+
 
 
 
 #outputs : list of top 10 best schedules ranked
 # iput priority dictionary of classes, RAW from Api
-def best_schedules () 
+def best_schedules (classesRAW):
+	allClasses = []
+	allClasses = parse_RAW(classesRAW) #Parse into list of lists of single_classes corresponding to a specific course
+
+
+
+
+
+
+
+
+
+
