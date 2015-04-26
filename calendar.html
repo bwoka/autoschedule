@@ -16,6 +16,9 @@
 
     <!-- Custom CSS -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/fullcalendar.css" /><br>
+    <script src="js/lib/jquery.min.js"></script><br>
+    <script src="js/fullcalendar.min.js"></script><br>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,7 +26,17 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <script type='text/javascript'><br>
+    $(document).ready(function() { <br>
+    var date = new Date();<br>
+    var d = date.getDate();<br>
+    var m = date.getMonth();<br>
+    var y = date.getFullYear();<br>
+    </script>
 
+    
+    
 </head>
 
 <body>
@@ -70,8 +83,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>The Creators of AutoSchedule</h1>
-                        <p>Autoschedule was built by four undergraduate CS Students at CMU. </p>
+                        <p> FullCalendar Stuff </p>
                     </div>
                 </div>
             </div>
