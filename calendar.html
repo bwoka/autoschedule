@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" href="logo.png"/>
+
+<!--     Icon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a> -->
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>About the Creators</title>
+    <title>Calendar</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -20,26 +23,29 @@
     <script src="js/lib/jquery.min.js"></script>
     <script src="js/lib/moment.min.js"></script>
     <script src="js/fullcalendar.js"></script>
-
-    <script src = "js/jquery.js"></script>
     <script>
-        $("#weekcalendar").fullCalendar({
-            header: {
-                 left   : 'prev,next',
-                 center : 'title',
-                 right  : 'agendaDay',
-                },
-            defaultView: 'agendaWeek'
-        })
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                header: {
+                     left   : 'prev,next',
+                     center : 'title',
+                     right  : 'month,agendaWeek,agendaDay'
+                    },
+                defaultDate: '2015-08-31',
+                events: [
+                    {
+                        title: '15221',
+                        start: '2015-09-01T09:00:00',
+                        end: '2015-09-01T10:20:00'
+                    }
+                ],
+                minTime: '6:00:00',
+                maxTime: '21:30:00',
+                defaultView: 'agendaWeek'
+            })
+        });
     </script>
     
-    <script type='text/javascript'>
-        $(document).ready(function() { 
-        var date = new Date();
-        var d = date.getDate();
-        var m = date.getMonth();
-        var y = date.getFullYear();
-    </script>
 
 </head>
 
@@ -81,7 +87,7 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div id = 'weekcalendar'></div>
+        <div id = 'calendar'></div>
         <!-- /#page-content-wrapper -->
 
     </div>
@@ -89,12 +95,6 @@
 
 
     <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
 
 </body>
 
