@@ -111,7 +111,7 @@ def find_schedulees(allClasses, i, schedule, limit, units):
 
 #outputs : list of top 10 best schedules ranked
 # iput priority dictionary of classes, RAW from Api
-def main(classes):
+def best_schedules(classes):
 	allClasses = parse_RAW(classesRAW) #Parse into list of lists of single_classes corresponding to a specific course
 	return find_schedulees(allClasses,0,0,[],[])
 

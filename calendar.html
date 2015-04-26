@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" href="logo.png"/>
+
+<!--     Icon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a> -->
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,34 +12,41 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>About the Creators</title>
+    <title>Calendar</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/fullcalendar.css" /><br>
-    <script src="js/lib/jquery.min.js"></script><br>
-    <script src="js/fullcalendar.min.js"></script><br>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-    <script type='text/javascript'><br>
-    $(document).ready(function() { <br>
-    var date = new Date();<br>
-    var d = date.getDate();<br>
-    var m = date.getMonth();<br>
-    var y = date.getFullYear();<br>
+    <link rel="stylesheet" href="css/simple-sidebar.css"/>
+    <link rel="stylesheet" href="css/fullcalendar.css"/>
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/moment.min.js"></script>
+    <script src="js/fullcalendar.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                header: {
+                     left   : 'prev,next',
+                     center : 'title',
+                     right  : 'month,agendaWeek,agendaDay'
+                    },
+                defaultDate: '2015-08-31',
+                events: [
+                    {
+                        title: '15221',
+                        start: '2015-09-01T09:00:00',
+                        end: '2015-09-01T10:20:00'
+                    }
+                ],
+                minTime: '6:00:00',
+                maxTime: '21:30:00',
+                defaultView: 'agendaWeek'
+            })
+        });
     </script>
+    
 
-    
-    
 </head>
 
 <body>
@@ -47,9 +57,7 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="index.html">
-                        Home
-                    </a>
+                    <a href="index.html">Home</a>
                 </li>
                 <li>
                     <a href="build.html">Build Your Schedule</a>
@@ -79,33 +87,14 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p> FullCalendar Stuff </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id = 'calendar'></div>
         <!-- /#page-content-wrapper -->
 
     </div>
     <!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
 
     <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
 
 </body>
 
