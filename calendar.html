@@ -15,28 +15,32 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/fullcalendar.css" /><br>
-    <script src="js/lib/jquery.min.js"></script><br>
-    <script src="js/fullcalendar.min.js"></script><br>
+    <link rel="stylesheet" href="css/simple-sidebar.css"/>
+    <link rel="stylesheet" href="css/fullcalendar.css"/>
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/moment.min.js"></script>
+    <script src="js/fullcalendar.js"></script>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <script src = "js/jquery.js"></script>
+    <script>
+        $("#weekcalendar").fullCalendar({
+            header: {
+                 left   : 'prev,next',
+                 center : 'title',
+                 right  : 'agendaDay',
+                },
+            defaultView: 'agendaWeek'
+        })
+    </script>
     
-    <script type='text/javascript'><br>
-    $(document).ready(function() { <br>
-    var date = new Date();<br>
-    var d = date.getDate();<br>
-    var m = date.getMonth();<br>
-    var y = date.getFullYear();<br>
+    <script type='text/javascript'>
+        $(document).ready(function() { 
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
     </script>
 
-    
-    
 </head>
 
 <body>
@@ -47,9 +51,7 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="index.html">
-                        Home
-                    </a>
+                    <a href="index.html">Home</a>
                 </li>
                 <li>
                     <a href="build.html">Build Your Schedule</a>
@@ -79,25 +81,12 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p> FullCalendar Stuff </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id = 'weekcalendar'></div>
         <!-- /#page-content-wrapper -->
 
     </div>
     <!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
 
     <!-- Menu Toggle Script -->
     <script>
