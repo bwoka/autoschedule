@@ -55,6 +55,8 @@ def find_schedulees(allClasses, schedule):
 		else: return []
 	coursesToAdd = allClasses[0]
 	new_schedules = []
+	for i in range(len(coursesToAdd)):
+		schedule_copy = copy.deepcopy(schedule)
 
 
 
